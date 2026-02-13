@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For My Love ❤️</title>
+
 <style>
 body {
     margin: 0;
@@ -10,32 +12,34 @@ body {
     text-align: center;
     overflow-x: hidden;
     color: white;
+    padding: 20px;
 }
 
 h1 {
-    margin-top: 100px;
-    font-size: 40px;
+    margin-top: 60px;
+    font-size: 8vw; /* Responsive font size */
 }
 
 button {
-    padding: 15px 30px;
-    font-size: 18px;
+    padding: 12px 25px;
+    font-size: 5vw;
     border: none;
     border-radius: 30px;
     background: white;
     color: #ff4b6e;
     cursor: pointer;
     transition: 0.3s;
+    max-width: 90%;
 }
 
 button:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 #message {
-    margin-top: 30px;
-    font-size: 20px;
-    width: 70%;
+    margin-top: 25px;
+    font-size: 5vw;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -55,19 +59,50 @@ button:hover {
 }
 
 .memory {
-    margin-top: 40px;
+    margin-top: 30px;
     background: rgba(255,255,255,0.2);
-    padding: 20px;
+    padding: 15px;
     border-radius: 20px;
-    width: 60%;
+    width: 95%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.memory h3 {
+    font-size: 5vw;
+}
+
+.memory p {
+    font-size: 4.5vw;
+}
+
+/* Optional: Better layout for larger screens */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 40px;
+    }
+    button {
+        font-size: 18px;
+    }
+    #message {
+        font-size: 20px;
+        width: 70%;
+    }
+    .memory {
+        width: 60%;
+    }
+    .memory h3 {
+        font-size: 22px;
+    }
+    .memory p {
+        font-size: 18px;
+    }
 }
 </style>
 </head>
 
 <body>
- 
+
 <h1>Happy Valentine's day Vieeee! ❤️</h1>
 <button onclick="showMessage()">Open My Heart</button>
 
@@ -87,7 +122,7 @@ button:hover {
 function showMessage() {
     let text = "Every day with you feels like the best day of my life. I really appreciate the love you have given me and I have enjoyed every moment we had together, you help me forget all my worries and I felt so happy and had so much fun every time we were together since the first time we met, and in Nha Trang and in Da lat too, those memories will always be precious to me. I am really looking forward to the next time we can meet and hopefully we can live together in the future so that we don't have to deal with this distance. I love you so much vieeee. ❤️";
     let i = 0;
-    let speed = 50;
+    let speed = 40;
     let messageDiv = document.getElementById("message");
     messageDiv.innerHTML = "";
 
@@ -107,13 +142,13 @@ setInterval(() => {
     heart.innerHTML = "❤️";
     heart.className = "heart";
     heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = Math.random() * 20 + 20 + "px";
+    heart.style.fontSize = Math.random() * 15 + 20 + "px";
     document.body.appendChild(heart);
 
     setTimeout(() => {
         heart.remove();
     }, 5000);
-}, 500);
+}, 600);
 </script>
 
 </body>
