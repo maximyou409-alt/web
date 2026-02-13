@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For My Love ❤️</title>
+<style>
+body {
+    margin: 0;
+    background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+    color: white;
+}
+
+h1 {
+    margin-top: 100px;
+    font-size: 40px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: #ff4b6e;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+#message {
+    margin-top: 30px;
+    font-size: 20px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.heart {
+    position: fixed;
+    bottom: -10px;
+    color: pink;
+    animation: float 5s linear infinite;
+}
+
+@keyframes float {
+    to {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+
+.memory {
+    margin-top: 40px;
+    background: rgba(255,255,255,0.2);
+    padding: 20px;
+    border-radius: 20px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+</head>
+
+<body>
+
+<h1>For My Beautiful Girlfriend ❤️</h1>
+<button onclick="showMessage()">Open My Heart</button>
+
+<div id="message"></div>
+
+<div class="memory">
+    <h3>Our First Memory</h3>
+    <p>The first time we talked, I already knew you were special.</p>
+</div>
+
+<div class="memory">
+    <h3>My Favorite Thing About You</h3>
+    <p>Your smile makes everything better.</p>
+</div>
+
+<script>
+function showMessage() {
+    let text = "Every day with you feels like the best day of my life. I love you more than words can explain ❤️";
+    let i = 0;
+    let speed = 50;
+    let messageDiv = document.getElementById("message");
+    messageDiv.innerHTML = "";
+
+    function typeWriter() {
+        if (i < text.length) {
+            messageDiv.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+    typeWriter();
+}
+
+// Floating hearts
+setInterval(() => {
+    let heart = document.createElement("div");
+    heart.innerHTML = "❤️";
+    heart.className = "heart";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 20 + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}, 500);
+</script>
+
+</body>
+</html>
